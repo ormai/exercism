@@ -1,1 +1,9 @@
-{"track":"javascript","exercise":"book-store","id":"01f3b51f723241629b61761690d81f25","url":"https://exercism.org/tracks/javascript/exercises/book-store","handle":"ormai","is_requester":true,"auto_approve":false}
+{
+  "track": "javascript",
+  "exercise": "book-store",
+  "id": "01f3b51f723241629b61761690d81f25",
+  "url": "https://exercism.org/tracks/javascript/exercises/book-store",
+  "handle": "ormai",
+  "is_requester": true,
+  "auto_approve": false
+}

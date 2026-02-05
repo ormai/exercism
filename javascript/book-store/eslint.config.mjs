@@ -1,9 +1,9 @@
 // @ts-check
 
-import config from '@exercism/eslint-config-javascript';
-import maintainersConfig from '@exercism/eslint-config-javascript/maintainers.mjs';
+import config from "@exercism/eslint-config-javascript";
+import maintainersConfig from "@exercism/eslint-config-javascript/maintainers.mjs";
 
-import globals from 'globals';
+import globals from "globals";
 
 export default [
   ...config,
@@ -11,11 +11,11 @@ export default [
   {
     files: maintainersConfig[1].files,
     rules: {
-      'jest/expect-expect': ['warn', { assertFunctionNames: ['expect*'] }],
+      "jest/expect-expect": ["warn", { assertFunctionNames: ["expect*"] }],
     },
   },
   {
-    files: ['scripts/**/*.mjs'],
+    files: ["scripts/**/*.mjs"],
     languageOptions: {
       globals: {
         ...globals.node,
@@ -26,20 +26,20 @@ export default [
   {
     ignores: [
       // # Protected or generated
-      '/.appends/**/*',
-      '/.github/**/*',
-      '/.vscode/**/*',
+      "/.appends/**/*",
+      "/.github/**/*",
+      "/.vscode/**/*",
 
       // # Binaries
-      '/bin/*',
+      "/bin/*",
 
       // # Configuration
-      '/config',
-      '/babel.config.js',
+      "/config",
+      "/babel.config.js",
 
       // # Typings
-      '/exercises/**/global.d.ts',
-      '/exercises/**/env.d.ts',
+      "/exercises/**/global.d.ts",
+      "/exercises/**/env.d.ts",
     ],
   },
 ];
