@@ -8,7 +8,7 @@
  *
  * @returns {Card} the first card in the deck
  */
-export function getFirstCard([first,]) {
+export function getFirstCard([first]) {
   return first;
 }
 
@@ -19,44 +19,46 @@ export function getFirstCard([first,]) {
  *
  * @returns {Card} the second card in the deck
  */
-export function getSecondCard([, second,]) {
+export function getSecondCard([, second]) {
   return second;
 }
 
 /**
- * Switch the position of the first two cards in the given deck
+ * Switch the position of the two cards in the given deck
  *
  * @param {Card[]} deck
  *
  * @returns {Card[]} new deck with reordered cards
  */
-export function swapTopTwoCards([first, second, ...rest]) {
-  return [second, first, ...rest];
+export function swapTwoCards([first, second]) {
+  return [second, first];
 }
 
 /**
- * Put the top card of the given deck into a separate discard pile
+ * Put the first card of the given deck into the back of the deck.
  *
  * @param {Card[]} deck
  *
- * @returns {[Card, Card[]]} the top card of the given
- * deck and a new deck containing all the other cards
+ * @returns {Card[]} deck
  */
-export function discardTopCard([first, ...rest]) {
-  return [first, rest];
+export function shiftThreeCardsAround([first, second, third]) {
+  return [second, third, first];
 }
 
-/** @type {Card[]} **/
-const FACE_CARDS = ['jack', 'queen', 'king'];
+/**
+ * @param {{chosen: Card[], disregarded: Card[]}} deck
+ *
+ * @returns {Card[]} chosen
+ */
+export function pickNamedPile({ chosen }) {
+  return chosen;
+}
 
 /**
- * Insert face cards into the given deck
+ * @param {{chosen: Card[], disregarded: Card[]}}
  *
- * @param {Card[]} deck
- *
- * @returns {Card[]} new deck where the second,
- * third, and fourth cards are the face cards
+ * @returns {{chosen: Card[], disregarded: Card[]}}
  */
-export function insertFaceCards([first, ...rest]) {
-  return [first, ...FACE_CARDS, ...rest];
+export function swapNamedPile({ chosen, disregarded }) {
+  return { chosen: disregarded, disregarded: chosen };
 }
